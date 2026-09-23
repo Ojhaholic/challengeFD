@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechMart | Smart Price Finder</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <div class="logo">
+                TechMart
+            </div>
+
+            <span class="nav-label">
+                Product Explorer
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                CHALLENGE 01
+            </p>
+
+            <h1>
+                Smart Price Finder
+            </h1>
+
+            <p class="hero-description">
+                Enter your target price and discover the products
+                closest to your budget.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SEARCH BOX
+        ========================== -->
+
+        <section class="search-section">
+
+            <div class="search-content">
+
+                <label for="priceInput">
+                    Find products around
+                </label>
+
+                <div class="search-row">
+
+                    <div class="price-input-wrapper">
+
+                        <span class="currency">
+                            ₹
+                        </span>
+
+                        <input
+                            type="number"
+                            id="priceInput"
+                            placeholder="70,000"
+                            min="1"
+                        >
+
+                    </div>
+
+                    <button
+                        id="searchBtn"
+                        class="search-btn"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+                <p class="search-hint">
+                    Example: Enter 70000 to find products around ₹70,000
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTS
+        ========================== -->
+
+        <section class="results-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RESULTS
+                    </p>
+
+                    <h2>
+                        Closest Products
+                    </h2>
+
+                </div>
+
+                <span
+                    id="resultCount"
+                    class="result-count"
+                ></span>
+
+            </div>
+
+
+            <!-- Error / Empty message -->
+
+            <div
+                id="message"
+                class="message hidden"
+            ></div>
+
+
+            <!-- Product cards -->
+
+            <div
+                id="results"
+                class="products-grid"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PRODUCT MODAL
+    ========================== -->
+
+    <div
+        id="productModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-overlay"></div>
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-btn"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <p
+                id="modalBrand"
+                class="modal-brand"
+            ></p>
+
+            <h2
+                id="modalName"
+                class="modal-title"
+            ></h2>
+
+            <div
+                id="modalRating"
+                class="modal-rating"
+            ></div>
+
+            <div
+                id="modalPrice"
+                class="modal-price"
+            ></div>
+
+            <div class="modal-info">
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        Stock
+                    </span>
+
+                    <strong id="modalStock"></strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        Category
+                    </span>
+
+                    <strong id="modalCategory"></strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        Subcategory
+                    </span>
+
+                    <strong id="modalSubcategory"></strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="specifications">
+
+                <h3>
+                    Specifications
+                </h3>
+
+                <div
+                    id="modalSpecifications"
+                    class="spec-list"
+                ></div>
+
+            </div>
+
+
+            <div class="tags-section">
+
+                <h3>
+                    Tags
+                </h3>
+
+                <div
+                    id="modalTags"
+                    class="tags"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <!-- Teacher's supplied dataset -->
+    <script src="js/data.js"></script>
+
+    <!-- Our application -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

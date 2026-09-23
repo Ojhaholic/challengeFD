@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart | Inventory Range Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">TechMart</div>
+        <span class="nav-label">Inventory Analytics</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <p class="eyebrow">CHALLENGE 06</p>
+        <h1>Inventory Range Dashboard</h1>
+        <p class="hero-description">
+            Select a price range to analyze products and their total inventory value.
+        </p>
+    </section>
+
+    <section class="filter-card">
+
+        <div class="filter-header">
+            <div>
+                <p class="eyebrow">PRICE RANGE</p>
+                <h2>Filter Inventory</h2>
+            </div>
+        </div>
+
+        <div class="inputs-grid">
+
+            <div class="input-group">
+                <label for="minPrice">Minimum Price</label>
+                <div class="input-wrapper">
+                    <span>₹</span>
+                    <input id="minPrice" type="number" min="0" placeholder="5000">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="maxPrice">Maximum Price</label>
+                <div class="input-wrapper">
+                    <span>₹</span>
+                    <input id="maxPrice" type="number" min="0" placeholder="20000">
+                </div>
+            </div>
+
+            <button id="searchBtn" class="search-btn">
+                Analyze Inventory
+            </button>
+
+        </div>
+
+        <div class="slider-section">
+
+            <div class="slider-labels">
+                <span id="sliderMinLabel">₹0</span>
+                <span id="sliderMaxLabel">₹0</span>
+            </div>
+
+            <div class="range-slider">
+
+                <input
+                    id="minSlider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    value="0"
+                >
+
+                <input
+                    id="maxSlider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    value="1"
+                >
+
+            </div>
+
+            <p class="slider-hint">
+                You can also adjust the range using the sliders.
+            </p>
+
+        </div>
+
+    </section>
+
+    <div id="message" class="message hidden"></div>
+
+    <section class="summary-grid">
+
+        <div class="summary-card">
+            <span class="summary-label">Products</span>
+            <strong id="productCount">0</strong>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-label">Inventory Value</span>
+            <strong id="inventoryValue">₹0</strong>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-label">Price Range</span>
+            <strong id="selectedRange">—</strong>
+        </div>
+
+    </section>
+
+    <section class="results-section">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">MATCHING PRODUCTS</p>
+                <h2>Inventory</h2>
+            </div>
+
+            <span id="resultCount" class="result-count"></span>
+        </div>
+
+        <div id="results" class="products-grid"></div>
+
+    </section>
+
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
